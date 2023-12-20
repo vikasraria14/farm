@@ -2,7 +2,7 @@ const express = require("express");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-const { insertMenu } = require("../database/services");
+const { insertProduct } = require("../database/services");
 // const addProductRouter = express();
 const addProductRouter = require("express").Router();
 // Set up Multer for file uploads
@@ -45,7 +45,7 @@ addProductRouter.post("/", upload.single("image"), async (req, res) => {
       rating: Math.round(Math.random() * 5),
       addedBy: addedBy,
     };
-    await insertMenu(productData);
+    await insertProduct(productData);
     // Respond with a success message or other addProductRouterropriate response
     res.json({ message: "Product added successfully" });
   } catch (err) {

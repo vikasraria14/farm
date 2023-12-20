@@ -20,7 +20,6 @@ const Edit = ({
   });
   const [empData, setEmpData] = useState(x);
   const [categories, setCategories] = useState([]);
-  console.log("selected", empData);
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
@@ -34,7 +33,7 @@ const Edit = ({
       // }
       // let finalData ={...empData}
       let complainent = localStorage.getItem("username");
-      let finalData = { ...empData, complainent: complainent };
+      let finalData = { ...empData, assignedTo: complainent };
       console.log("final", finalData);
       const res = await axios.put(
         `${config.endpoint}/${endpoint}/${id}`,

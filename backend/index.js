@@ -14,7 +14,7 @@ const signupRouter = require('./routes/register')
 const adminRegister = require('./routes/adminRegisteration')
 const adminLogin = require('./routes/adminLogin')
 const admin = require('./routes/admin')
-const addMenu = require('./routes/addMenu')
+const addProduct = require('./routes/addProduct')
 const complaintsRouter = require('./routes/complaints.js')
 const orderRouter = require('./routes/orders')
 
@@ -28,7 +28,7 @@ app.use('/api/v1/orders', orderRouter)
 app.use('/api/v1/adminRegistration', adminRegister)
 app.use('/api/v1/adminLogin', adminLogin)
 app.use('/api/v1/admin', admin)
-app.use('/api/v1/addProduct',addMenu)
+app.use('/api/v1/addProduct',addProduct)
 app.use('/api/v1/complaints',complaintsRouter)
 const port = process.env.PORT || config.port
 app.listen(port, () => {
